@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+    <strong>Name:</strong>
+    <%= @customer.name %>
+</p>
+
+<h3>Contact Information</h3>
+<ul>
+    <% @customer.contacts.each do |contact|%>
+        <li><%= contact.name %>: <%= contact.value %></li> 
+    <% end %>
+    <%= link_to 'Edit', edit_customer_path(@customer) %> |
+    <%= link_to 'Back', customers_path %>
+</ul>
